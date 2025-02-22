@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    transition:
+        background-color 0.5s,
+        color 0.5s;
+}
+
+@layer base {
+    body {
+        @apply bg-lightGrey bg-backgroundMobileLight text-darkNavy dark:bg-darkNavy dark:bg-backgroundMobileDark sm:bg-backgroundTabletLight dark:sm:bg-backgroundTabletDark lg:bg-backgroundDesktopLight dark:lg:bg-backgroundDesktopDark mx-auto min-h-screen w-[375px] max-w-[1440px] scroll-smooth bg-cover sm:w-full md:max-w-[768px] xl:max-w-[1160px] dark:text-white;
+    }
+}
