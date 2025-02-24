@@ -6,10 +6,47 @@ html {
     transition:
         background-color 0.5s,
         color 0.5s;
+    overflow-x: hidden;
 }
 
-@layer base {
+/* @layer base {
     body {
-        @apply bg-lightGrey bg-backgroundMobileLight text-darkNavy dark:bg-darkNavy dark:bg-backgroundMobileDark sm:bg-backgroundTabletLight dark:sm:bg-backgroundTabletDark lg:bg-backgroundDesktopLight dark:lg:bg-backgroundDesktopDark mx-auto min-h-screen w-[375px] max-w-[1440px] scroll-smooth bg-cover sm:w-full md:max-w-[768px] xl:max-w-[1160px] dark:text-white;
+        @apply w-screen min-h-screen mx-auto bg-cover scroll-smooth bg-lightGrey bg-backgroundMobileLight text-darkNavy dark:bg-darkNavy dark:bg-backgroundMobileDark dark:text-white sm:w-full sm:bg-backgroundTabletLight dark:sm:bg-backgroundTabletDark lg:bg-backgroundDesktopLight dark:lg:bg-backgroundDesktopDark;
     }
+} */
+/* @layer base {
+    body {
+        @apply mx-auto min-h-screen w-screen scroll-smooth;
+    }
+} */
+
+.nav-link {
+    /* color: #666666; */
+    font-size: 14px;
+    padding: 8px 12px;
+}
+.try-free-btn {
+    background-color: #017e84;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.start-now-btn {
+    background-color: #017e84;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.meet-expert-btn {
+    padding: 12px 24px;
+    font-weight: 500;
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 50%;
+    height: auto;
 }
