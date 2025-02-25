@@ -11,10 +11,10 @@ use Inertia\Inertia;
 
 class QuizController extends Controller
 {
-    public function index($title)
+    public function index(Quiz $title)
     {
         return Inertia::render("Quiz/index", [
-            'quizModel' => Quiz::find($title),
+            'quizModel' => $title,
         ]);
     }
 }
