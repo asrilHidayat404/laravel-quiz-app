@@ -1,6 +1,5 @@
 // import { Quiz } from "../../types";
 import Navbar from '@/Components/Navbar';
-import { useQuestionContext } from '@/context/QuestionContext';
 import ScorePage from '@/Layouts/ScorePage';
 import { Quiz } from '@/types/types';
 import { useState } from 'react';
@@ -19,11 +18,11 @@ const QuizPage = ({ materi, level, quizModel }) => {
     const [score, setScore] = useState<number>(0);
     const [showNextQuestion, setShowNextQuestion] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
-    const { quiz } = useQuestionContext();
-    const quizData = quiz;
+    // const { quiz } = useQuestionContext();
+    // const quizData = quiz;
     let currentQuestion = quizModel.questions && quizModel.questions[question];
     let numberOfQuestions = quizModel.questions?.length;
-    console.log({ quizModel, quiz });
+    console.log({ quizModel });
 
     const handleSubmit = () => {
         if (selectedAnswer === '') {

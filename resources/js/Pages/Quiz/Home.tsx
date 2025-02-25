@@ -1,14 +1,15 @@
 import Navbar from '@/Components/Navbar';
 import QuizModalCard from '@/Components/QuizModalCard';
 import { useQuestionContext } from '@/context/QuestionContext';
-import { Quiz, Quizzes } from '@/types/types';
+import { Quiz } from '@/types/types';
 import { Head, usePage } from '@inertiajs/react';
 import { useState } from 'react';
-import data from '../../data/data.json';
 
-function QuizPage() {
-    const quizzes: Quizzes = data.quizzes;
+type HomeProps = {
+    quizzes: Quiz[];
+};
 
+function QuizPage({ quizzes }: HomeProps) {
     return (
         <div className="bg-gray-200">
             <Head title="Home" />
@@ -21,14 +22,11 @@ function QuizPage() {
 
 export default QuizPage;
 
-type HomeProps = {
-    quizzes: Quiz[];
-};
-
 const Home = ({ quizzes }: HomeProps) => {
     const { quiz, setQuiz } = useQuestionContext();
     const [modalActive, setModalActive] = useState(false);
     const { user } = usePage().props?.auth;
+    console.log(quiz);
 
     const handleSelectedQuiz = (quiz: Quiz) => {
         setQuiz(quiz);
@@ -46,7 +44,7 @@ const Home = ({ quizzes }: HomeProps) => {
                         Pick a subject to get started.
                     </h3>
                 </div>
-                <div className="flex flex-1 items-center justify-center rounded-xl bg-violet-700 bg-gradient-to-br">
+                <div className="flex flex-1 items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-teal-600">
                     <h1 className="text-2xl text-white">
                         Hello {user ? user.name : 'Student'}
                     </h1>

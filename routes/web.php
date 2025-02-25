@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
+use App\Models\Quiz;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,7 +19,10 @@ Route::get("/materi", function () {
 });
 
 Route::get('/quiz', function () {
-    return Inertia::render('Quiz/Home');
+    $quizzes = Quiz::all();
+    return Inertia::render('Quiz/Home', [
+        "quizzes" => $quizzes
+    ]);
 });
 
 Route::get('/quiz-test/{quiz:title}', [QuizController::class, "index"])->name('quiz.study');

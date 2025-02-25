@@ -50,3 +50,16 @@ html {
     max-width: 50%;
     height: auto;
 }
+
+.animate {
+    animation: show 0.3s ease-in-out;
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
