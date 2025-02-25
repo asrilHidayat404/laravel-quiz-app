@@ -21,7 +21,7 @@ Route::get('/quiz', function () {
     return Inertia::render('Quiz/Home');
 });
 
-Route::get('/quiz-test/{title}', [QuizController::class, "index"])->name('quiz.study');
+Route::get('/quiz-test/{quiz:title}', [QuizController::class, "index"])->name('quiz.study');
 
 
 
