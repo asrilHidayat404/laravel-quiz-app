@@ -6,6 +6,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
+
+
 Route::get('/', function () {
     return Inertia::render('Welcome');
 });
@@ -14,12 +17,11 @@ Route::get("/materi", function () {
     return Inertia::render("Materi/index");
 });
 
-Route::get('/quiz', [QuizController::class, 'index']);
-
-Route::post('/quiz-study', [QuizController::class, 'take_quiz'])->name('quiz.study');
-Route::get('/quiz-study0', function() {
-     return Inertia::render('Quiz/index');
+Route::get('/quiz', function () {
+    return Inertia::render('Quiz/Home');
 });
+
+Route::get('/quiz-test/{title}', [QuizController::class, "index"])->name('quiz.study');
 
 
 
@@ -33,4 +35,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

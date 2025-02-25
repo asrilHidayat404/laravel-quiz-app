@@ -9,9 +9,7 @@ type QuizPageProps = {
     quizData: Quiz;
 };
 
-const QuizPage = ({ materi, level }) => {
-    console.log({ materi, level });
-
+const QuizPage = ({ materi, level, quizModel }) => {
     const [question, setQuestion] = useState<number>(0);
     const [progressBar, setProgressBar] = useState<number>(10);
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
@@ -23,8 +21,9 @@ const QuizPage = ({ materi, level }) => {
     const [error, setError] = useState<boolean>(false);
     const { quiz } = useQuestionContext();
     const quizData = quiz;
-    let currentQuestion = quizData.questions && quizData.questions[question];
-    let numberOfQuestions = quizData.questions?.length;
+    let currentQuestion = quizModel.questions && quizModel.questions[question];
+    let numberOfQuestions = quizModel.questions?.length;
+    console.log({ quizModel, quiz });
 
     const handleSubmit = () => {
         if (selectedAnswer === '') {
@@ -53,21 +52,20 @@ const QuizPage = ({ materi, level }) => {
         setProgressBar(progressBar + 10);
         setShowNextQuestion(false);
     };
-    console.log(quiz);
 
     return (
         <>
             <Navbar
-                title={quizData.title}
-                icon={quizData.icon}
-                iconbg={quizData.iconbg}
+                title={quizModel.title}
+                icon={quizModel.icon}
+                iconbg={quizModel.iconbg}
             />
             {Number(question) === numberOfQuestions ? (
                 <ScorePage
                     score={score}
-                    title={quizData.title}
-                    icon={quizData.icon}
-                    iconbg={quizData.iconbg}
+                    title={quizModel.title}
+                    icon={quizModel.icon}
+                    iconbg={quizModel.iconbg}
                     numberOfQuestions={numberOfQuestions}
                 />
             ) : (
@@ -167,14 +165,14 @@ const QuizPage = ({ materi, level }) => {
                         </ul>
                         {!showNextQuestion ? (
                             <button
-                                className="bg-['linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), #a729f5'] bg-purple hover:bg-btnHover h-14 w-full rounded-xl py-2 text-xs font-semibold text-white transition-all duration-200 ease-in-out sm:h-[92px] sm:rounded-3xl sm:text-[28px] xl:w-[564px]"
+                                className="h-14 w-full rounded-xl bg-purple-500 py-2 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-purple-600 sm:h-[92px] sm:rounded-3xl sm:text-[28px] xl:w-[564px]"
                                 onClick={handleSubmit}
                             >
                                 Submit Answer
                             </button>
                         ) : (
                             <button
-                                className="bg-purple hover:bg-btnHover h-14 w-full rounded-xl py-2 text-xs font-semibold text-white transition-all duration-200 ease-in-out sm:h-[92px] sm:rounded-3xl sm:text-[28px]"
+                                className="h-14 w-full rounded-xl bg-purple-500 py-2 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-purple-600 sm:h-[92px] sm:rounded-3xl sm:text-[28px]"
                                 onClick={handleNextQuestion}
                             >
                                 Next Question

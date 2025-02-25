@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use App\Models\Quiz;
+
+use App\Models\Quiz;
 use Inertia\Inertia;
+
+
 
 class QuizController extends Controller
 {
-    public function index(){
-        return Inertia::render('Quiz/Home');
-    }
-
-    public function take_quiz(Request $request){
-        // return Inertia::render('Quiz/index', [
-        //     'materi' => $request->title,
-        //     'level' => $request->level
-        // ]);
+    public function index($title)
+    {
+        return Inertia::render("Quiz/index", [
+            'quizModel' => Quiz::find($title),
+        ]);
     }
 }
