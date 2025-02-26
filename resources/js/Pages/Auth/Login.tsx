@@ -120,60 +120,30 @@ function Login2({ canResetPassword }) {
     };
 
     return (
-        <main className="w-full">
+        <main
+            className="w-full"
+            style={{
+                background:
+                    'linear-gradient(to top, rgba(0, 0, 255, 0.3) 0%, rgba(0, 0, 255, 0.1) 10%, white 60%)'
+            }}
+        >
             <Head title="Sign In" />
-            <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-700 to-[#017e84] p-4">
-                <div className="flex w-full max-w-4xl overflow-hidden rounded-3xl bg-white bg-opacity-20 shadow-xl backdrop-blur-lg">
+            <div className="flex min-h-screen items-center justify-center bg-gray-700 bg-gradient-to-br p-4">
+                <div className="flex w-full max-w-4xl overflow-hidden rounded-3xl bg-opacity-20 shadow-xl backdrop-blur-lg">
                     {/* Left side with illustration */}
-                    <div className="relative hidden w-1/2 flex-col items-center justify-center bg-gradient-to-br from-blue-400 to-purple-400 p-8 md:flex lg:flex">
+                    <div className="animate__animated animate__bounceInRight relative hidden w-1/2 flex-col items-center justify-center bg-gradient-to-br from-blue-400 to-purple-400 p-8 md:flex lg:flex">
                         <div className="absolute left-4 top-4 flex space-x-1">
                             <div className="h-2 w-2 rounded-full bg-black bg-opacity-20"></div>
                             <div className="h-2 w-2 rounded-full bg-black bg-opacity-20"></div>
                             <div className="h-2 w-2 rounded-full bg-black bg-opacity-20"></div>
                         </div>
 
-                        <div className="relative mb-6 h-40 w-40">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="relative h-32 w-24 rotate-12 transform rounded-b-md rounded-t-full bg-blue-500">
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white">
-                                            <div className="h-8 w-8 rounded-full bg-blue-900"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Stars and decorations */}
-                            <div className="absolute right-0 top-0">
-                                <div className="text-2xl text-yellow-300">
-                                    ✦
-                                </div>
-                            </div>
-                            <div className="absolute bottom-4 left-4">
-                                <div className="text-2xl text-yellow-300">
-                                    ✦
-                                </div>
-                            </div>
-                            <div className="absolute left-1/4 top-1/4">
-                                <div className="text-xl text-yellow-300">✦</div>
-                            </div>
-
-                            {/* Cloud */}
-                            <div className="absolute right-1/4 top-1/4">
-                                <div className="h-6 w-12 rounded-full bg-white"></div>
-                            </div>
-
-                            {/* Flame */}
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 transform">
-                                <div className="h-8 w-12 rounded-full bg-white bg-opacity-70"></div>
-                            </div>
-                        </div>
-
+                        <img src="/student.png" alt="" />
                         <p className="mt-8 px-4 text-center text-white">
                             You Are Few Minutes Away To Boost
                             <br />
                             Your Skills With{' '}
-                            <span className="font-bold">Ludiflex</span>
+                            <span className="font-bold">Us</span>
                         </p>
 
                         <div className="absolute bottom-4 right-4 flex space-x-1">
@@ -188,17 +158,20 @@ function Login2({ canResetPassword }) {
                         <div className="mb-2 flex justify-end">
                             <Link
                                 href="/register"
-                                className="rounded-full bg-blue-400 bg-opacity-50 px-4 py-2 text-sm text-white"
+                                className="animate__animated animate__bounceInLeft rounded-full bg-blue-400 bg-opacity-50 px-4 py-2 text-sm text-white"
                             >
                                 Sign In
                             </Link>
                         </div>
 
-                        <h2 className="mb-8 mt-4 text-3xl font-bold text-white">
+                        <h2 className="animate__animated animate__bounceInLeft mb-8 mt-4 text-3xl font-bold text-white">
                             Login
                         </h2>
 
-                        <form onSubmit={submit}>
+                        <form
+                            onSubmit={submit}
+                            className="animate__animated animate__bounceInLeft"
+                        >
                             <div className="mb-4">
                                 <div className="relative">
                                     <input

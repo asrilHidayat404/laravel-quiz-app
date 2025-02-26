@@ -19,16 +19,16 @@ export default function Welcome() {
                 >
                     <div className="flex flex-col items-center justify-center p-10 text-center">
                         <div className="lg:w-1/2">
-                            <h1 className="text-[30px] font-semibold text-blue-500 lg:text-[48px]">
+                            <h1 className="animate__animated animate__bounceInDown text-[30px] font-semibold text-blue-500 lg:text-[48px]">
                                 Free Learning Management System Holy Shit
                             </h1>
-                            <p className="mt-[16px] text-[16px]">
+                            <p className="animate__animated animate__bounceInLeft mt-[16px] text-[16px]">
                                 The best open source LMS for your eLearning
                                 platform.
                             </p>
 
                             <div className="mt-8 flex flex-col items-center justify-center space-y-4">
-                                <button className="start-now-btn block text-white">
+                                <button className="start-now-btn animate__animated animate__bounceInRight block text-white">
                                     Study Now!
                                 </button>
                             </div>

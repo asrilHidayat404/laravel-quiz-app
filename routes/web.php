@@ -30,8 +30,12 @@ Route::get('/quiz-test/{quiz:title}', [QuizController::class, "index"])->name('q
 
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/add-quiz', function () {
+    return Inertia::render('Dashboard/AddQuiz');
+})->middleware(['auth', 'verified'])->name('add-quiz');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

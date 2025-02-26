@@ -13,12 +13,16 @@ export default function ForgotPassword({ status }: { status?: string }) {
     };
 
     return (
-        <main className="w-full">
-            <Head title="Sign In" />
-            <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-700 to-[#017e84] p-4">
+        <main
+            className="w-full"
+            style={{
+                background:
+                    'linear-gradient(to top, rgba(0, 0, 255, 0.3) 0%, rgba(0, 0, 255, 0.1) 10%, white 60%)'
+            }}
+        >
+            <Head title="Forgot Password" />
+            <div className="flex min-h-screen items-center justify-center bg-gray-700 p-4">
                 <div className="flex w-full max-w-4xl flex-col overflow-hidden rounded-3xl bg-white bg-opacity-20 p-10 shadow-xl backdrop-blur-lg md:w-1/2 lg:w-1/2">
-                    <Head title="Forgot Password" />
-
                     <div className="mb-4 text-sm text-gray-200 dark:text-gray-400">
                         Forgot your password? No problem. Just let us know your
                         email address and we will email you a password reset

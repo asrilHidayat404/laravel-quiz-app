@@ -2,11 +2,11 @@ import '../css/app.css';
 import './bootstrap';
 
 import { createInertiaApp } from '@inertiajs/react';
+import 'animate.css';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import QuestionContextProvider from './context/QuestionContext';
 import ThemeContextProvider from './context/ThemeContext';
-
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
